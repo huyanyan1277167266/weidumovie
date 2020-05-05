@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:gravity="center">
+<ImageView
+    android:layout_marginTop="@dimen/dp_10"
+    android:id="@+id/syiv"
+    android:layout_marginLeft="@dimen/dp_34"
+    android:layout_width="@dimen/dp_88"
+    android:layout_height="@dimen/dp_108" />
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:textColor="#ffffff"
+            android:id="@+id/syname"
+            android:textSize="@dimen/sp_14"
+            android:layout_marginTop="@dimen/dp_24"
+            android:layout_width="84dp"
+            android:layout_height="@dimen/dp_20" />
+        <TextView
+            android:textColor="#ffffff"
+            android:id="@+id/sydata"
+           android:layout_marginTop="@dimen/dp_10"
+            android:textSize="12dp"
+            android:layout_width="84dp"
+            android:layout_height="@dimen/dp_20" />
+        <LinearLayout
+
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/syrs"
+                android:textSize="@dimen/sp_12"
+                android:text="xxx"
+                android:textColor="#ffffff"
+                android:layout_width="@dimen/dp_55"
+                android:layout_height="@dimen/dp_17" />
+            <Button
+                android:id="@+id/syyy"
+                android:layout_marginLeft="@dimen/dp_84"
+                android:text="预约"
+                android:textSize="12dp"
+                android:background="@color/colorAccent2"
+                android:layout_width="@dimen/dp_45"
+                android:layout_height="@dimen/dp_20" />
+        </LinearLayout>
+       
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdv"
+        android:layout_width="@dimen/dp_312"
+        android:layout_height="@dimen/dp_120"
+        android:layout_marginLeft="@dimen/dp_24"
+        fresco:failureImage="@mipmap/ic_launcher"
+        fresco:placeholderImage="@mipmap/ic_launcher" />
+    <TextView
+        android:layout_marginLeft="@dimen/dp_24"
+        android:id="@+id/sdv_name"
+        android:layout_alignBottom="@+id/sdv"
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="@dimen/dp_20"
+        android:text="xxx"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/sp_16" />
+    <TextView
+
+        android:id="@+id/sdvfs"
+        android:layout_alignBottom="@+id/sdv"
+        android:layout_marginLeft="@dimen/dp_110"
+        android:text="xxx"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/dp_12"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_17" />
+    <Button
+        android:id="@+id/sdvgp"
+        android:layout_alignBottom="@id/sdv"
+        android:layout_marginLeft="@dimen/dp_257"
+        android:text="购票"
+        android:textSize="@dimen/dp_12"
+        android:textColor="#ffffff"
+        android:background="@color/colorAccent"
+        android:layout_width="45dp"
+        android:layout_height="@dimen/dp_20" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rlv"
+        android:layout_marginTop="@dimen/dp_130"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

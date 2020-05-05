@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+<ImageView
+    android:id="@+id/ryimage"
+    android:layout_width="@dimen/dp_100"
+    android:layout_height="@dimen/dp_130" />
+    <TextView
+        android:gravity="center"
+        android:id="@+id/ryname"
+        android:layout_marginTop="@dimen/dp_6"
+        android:layout_width="@dimen/dp_84"
+        android:layout_height="@dimen/dp_20"
+        android:text="xxxx"
+        android:textSize="@dimen/sp_14"
+        android:textColor="#ffffff"/>
+    <Button
+        android:id="@+id/rygp"
+        android:background="@color/colorAccent2"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="@dimen/dp_45"
+        android:layout_height="@dimen/dp_20"
+        android:text="购票"
+        android:textSize="@dimen/sp_12"
+        android:textColor="#ffffff"/>
+</LinearLayout>
