@@ -1,5 +1,8 @@
 package com.bw.movie.utiles;
 
+import com.bw.movie.bean.ComingSoonBean;
+import com.bw.movie.bean.HotMovieBean;
+import com.bw.movie.bean.ReleaseMovieBean;
 import com.bw.movie.bean.BannerBean;
 import com.bw.movie.bean.ComingBean;
 import com.bw.movie.bean.EmailBean;
@@ -52,4 +55,14 @@ import retrofit2.http.Query;
     //热门电影列表
     @GET("movie/v2/findHotMovieList")
     Observable<HotBean>doHot(@Query("page")int page,@Query("count")int count);
+    //正在上映电影列表
+    @GET("movie/v2/findReleaseMovieList")
+    Observable<ReleaseMovieBean>doReleaseMovie(@Query("page")int page,@Query("count")int count);
+    //即将上映电影列表
+    @GET("movie/v2/findComingSoonMovieList")
+    Observable<ComingSoonBean>doComingSoon(@Header("userId")int userId,@Header("sessionId")String sessionId,@Query("page")int page,@Query("count")int count);
+    //热门电影列表
+    @GET("movie/v2/findHotMovieList")
+    Observable<HotMovieBean>doHotMovie(@Query("page")int page,@Query("count")int count);
+
 }

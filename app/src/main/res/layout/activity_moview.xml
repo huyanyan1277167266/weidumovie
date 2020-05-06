@@ -16,5 +16,5 @@
         android:background="#141931"
         android:id="@+id/tab"
         android:layout_width="@dimen/dp_360"
-        android:layout_height="30dp"></com.google.android.material.tabs.TabLayout>
+        android:layout_height="50dp"></com.google.android.material.tabs.TabLayout>
 </LinearLayout>
