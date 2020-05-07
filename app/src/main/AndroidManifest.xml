@@ -33,8 +33,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MovieListActivity"></activity>
-        <!-- <meta-data -->
+        <activity android:name=".activity.MovieInfoActivity"></activity>
+        <activity android:name=".activity.QueryByKeyActivity" />
+        <activity android:name=".activity.MovieListActivity" /> <!-- <meta-data -->
         <!-- android:name="com.google.android.actions" -->
         <!-- android:resource="@xml/tabas" /> -->
         <activity android:name=".activity.MoviewActivity">
@@ -48,7 +49,7 @@
         <!-- android:name="com.google.android.actions" -->
         <!-- android:resource="@xml/edit_bg" /> -->
         <activity android:name=".activity.RegisterActivity" />
-        <activity android:name=".activity.MainActivity"></activity>
+        <activity android:name=".activity.MainActivity" />
         <activity
             android:name=".wxapi.WXEntryActivity"
             android:exported="true"

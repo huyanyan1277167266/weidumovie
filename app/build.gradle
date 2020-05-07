@@ -111,4 +111,6 @@ dependencies {
     implementation 'com.amap.api:map2d:latest.integration'
     implementation 'com.amap.api:search:latest.integration'
     implementation 'com.amap.api:location:latest.integration'
+    //xrecyclerview依赖
+    implementation 'com.jcodecraeer:xrecyclerview:1.5.8'
 }

@@ -7,6 +7,7 @@ import com.bw.movie.base.BaseFragment;
 import com.bw.movie.base.BasePresenter;
 import com.bw.movie.bean.HotMovieBean;
 import com.bw.movie.contract.HotContract;
+import com.bw.movie.presenter.HotIPresenter;
 
 /*
  *@Auther:cln
@@ -16,7 +17,7 @@ import com.bw.movie.contract.HotContract;
  * */public class HotFragment extends BaseFragment implements HotContract.HotView {
     @Override
     protected BasePresenter initPresenter() {
-        return null;
+        return new HotIPresenter(this);
     }
 
     @Override

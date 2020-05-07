@@ -111,7 +111,7 @@ import butterknife.OnClick;
         if (aMap==null){
             aMap=mapView.getMap();
             UiSettings settings = aMap.getUiSettings();
-            aMap.setLocationSource((LocationSource) this);
+            aMap.setLocationSource(this);
             settings.setMyLocationButtonEnabled(true);
             aMap.setMyLocationEnabled(true);
         }
@@ -184,6 +184,7 @@ import butterknife.OnClick;
     public void onReleaseSuccess(ReleaseBean releaseBean) {
         List<ResultBean> result = releaseBean.getResult();
 
+
         //存到数据库
         for (int i=0;i<result.size();i++){
             resultBeanDao.insertOrReplace(result.get(i));
@@ -195,6 +196,7 @@ import butterknife.OnClick;
         //创建适配器
         RyMovieAdapter ryMovieAdapter = new RyMovieAdapter(getActivity(),result);
         ryrlv.setAdapter(ryMovieAdapter);
+       // ryrlv.addItemDecoration(new SpaceItemDecoration(10));
     }
 
     @Override
@@ -323,7 +325,7 @@ import butterknife.OnClick;
         //初始化定位
         mLocationClient = new AMapLocationClient(getContext());
         //设置定位回调监听
-        mLocationClient.setLocationListener((AMapLocationListener) this);
+        mLocationClient.setLocationListener(this);
         //初始化定位参数
         mLocationOption = new AMapLocationClientOption();
         //设置定位模式为Hight_Accuracy高精度模式，Battery_Saving为低功耗模式，Device_Sensors是仅设备模式
