@@ -58,9 +58,9 @@ import retrofit2.http.Query;
     //正在上映电影列表
     @GET("movie/v2/findReleaseMovieList")
     Observable<ReleaseMovieBean>doReleaseMovie(@Query("page")int page,@Query("count")int count);
-    //即将上映电影列表
+    //即将上映电影列表  @Header("userId")int userId,@Header("sessionId")String sessionId,
     @GET("movie/v2/findComingSoonMovieList")
-    Observable<ComingSoonBean>doComingSoon(@Header("userId")int userId,@Header("sessionId")String sessionId,@Query("page")int page,@Query("count")int count);
+    Observable<ComingSoonBean>doComing(@Query("page")int page,@Query("count")int count);
     //热门电影列表
     @GET("movie/v2/findHotMovieList")
     Observable<HotMovieBean>doHotMovie(@Query("page")int page,@Query("count")int count);

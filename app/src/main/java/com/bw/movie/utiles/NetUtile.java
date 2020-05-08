@@ -75,11 +75,18 @@ import retrofit2.converter.gson.GsonConverterFactory;
         @Override
         public Response intercept(Chain chain) throws IOException {
             Request request = chain.request();
-            Request ak = request.newBuilder()
-                    .addHeader("ak","0110010010000")
-                    .addHeader("Content-Type","application/x-www-form-urlencoded")
-                    .build();
-            return chain.proceed(ak);
+            String userId = SpUtile.getString(App.getAppContext(), SpUtile.USERINFO_NAME, SpUtile.USERINFO_KEY_USER_ID);
+            String sessionId = SpUtile.getString(App.getAppContext(), SpUtile.USERINFO_NAME, SpUtile.USERINFO_KEY_SESSION_ID);
+            if (TextUtils.isEmpty(userId)||TextUtils.isEmpty(sessionId)){
+                return chain.proceed(request);
+            }else{
+                Request ak = request.newBuilder()
+                        .addHeader("ak","0110010010000")
+                        .addHeader("Content-Type","application/x-www-form-urlencoded")
+                        .build();
+                return chain.proceed(ak);
+            }
         }
     }
+
 }

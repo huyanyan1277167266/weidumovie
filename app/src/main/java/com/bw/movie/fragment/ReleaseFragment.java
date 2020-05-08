@@ -1,6 +1,7 @@
 package com.bw.movie.fragment;
 
 import android.graphics.Rect;
+import android.util.Log;
 import android.view.View;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -36,7 +37,7 @@ import butterknife.BindView;
     int s=1;
     @Override
     protected BasePresenter initPresenter() {
-        return new RegisterIPresenter(this);
+        return new ReleaseIPresenter(this);
     }
 
     @Override
@@ -74,9 +75,12 @@ import butterknife.BindView;
     }
     public void getget(int page,int count){
         BasePresenter basePresenter = getmPresenter();
-        if (basePresenter!=null&&basePresenter instanceof ReleaseIPresenter){
+//        if (basePresenter!=null&&basePresenter instanceof ReleaseIPresenter){
             ((ReleaseIPresenter) basePresenter).getRelease(page,count);
-        }
+            Log.i("a", "aaaaaaaaaaa ");
+//        }else{
+//
+//        }
     }
     @Override
     public void onReleaseSuccess(ReleaseBean releaseBean) {

@@ -1,5 +1,7 @@
 package com.bw.movie.model;
 
+import android.util.Log;
+
 import com.bw.movie.bean.ReleaseBean;
 import com.bw.movie.contract.ReleaseContract;
 import com.bw.movie.utiles.NetUtile;
@@ -37,7 +39,9 @@ import io.reactivex.schedulers.Schedulers;
                     public void onError(Throwable e) {
                         if (iCallBack!=null){
                             iCallBack.onReleaseError(e.getMessage());
+
                         }
+                        Log.i("b",""+e.toString());
                     }
 
                     @Override

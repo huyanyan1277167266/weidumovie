@@ -14,10 +14,10 @@ import com.bw.movie.bean.ComingBean;
          void onComingError(String str);
      }
      interface ComingPresenter{
-         void getComing(int userId,String sessionId,int page,int count);
+         void getComing(int page,int count);
      }
      interface ComingModel{
-         void getComing(int userId,String sessionId,int page,int count,ComingICallBack iCallBack);
+         void getComing(int page,int count,ComingICallBack iCallBack);
          interface ComingICallBack{
              void onComingSuccess(ComingBean comingBean);
              void onComingError(String str);
