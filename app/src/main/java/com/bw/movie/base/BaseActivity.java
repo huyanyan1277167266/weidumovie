@@ -13,7 +13,9 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import android.app.Dialog;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements IBaseView {
     P mPresenter;
@@ -41,7 +43,7 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
 //                mLoadingDialog.setCancelable(false);
 //                View v = View.inflate(this, R.layout.dialog_loading, null);
 //                ImageView iv = v.findViewById(R.id.iv_loading);
-//                Glide.with(this).asGif().load(R.mipmap.loading).into(iv);
+//                Glide.with(this).asGif().load(R.mipmap.ic_launcher).into(iv);
 //
 //                mLoadingDialog.addContentView(v,
 //                        new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,

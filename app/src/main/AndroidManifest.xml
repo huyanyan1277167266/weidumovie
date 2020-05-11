@@ -26,31 +26,32 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:networkSecurityConfig="@xml/a_b"
         android:name=".base.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/a_b"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MovieInfoActivity"></activity>
+        <activity android:name=".activity.WritePingLunActivity"></activity>
+        <activity android:name=".activity.MovieInfoActivity" />
         <activity android:name=".activity.QueryByKeyActivity" />
         <activity android:name=".activity.MovieListActivity" /> <!-- <meta-data -->
         <!-- android:name="com.google.android.actions" -->
         <!-- android:resource="@xml/tabas" /> -->
-        <activity android:name=".activity.MoviewActivity">
+        <activity android:name=".activity.MoviewActivity"></activity>
+        <activity android:name=".activity.LogActivity" /> <!-- <meta-data -->
+        <!-- android:name="com.google.android.actions" -->
+        <!-- android:resource="@xml/edit_bg" /> -->
+        <activity android:name=".activity.RegisterActivity"></activity>
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.LogActivity" /> <!-- <meta-data -->
-        <!-- android:name="com.google.android.actions" -->
-        <!-- android:resource="@xml/edit_bg" /> -->
-        <activity android:name=".activity.RegisterActivity" />
-        <activity android:name=".activity.MainActivity" />
         <activity
             android:name=".wxapi.WXEntryActivity"
             android:exported="true"
@@ -58,6 +59,7 @@
             android:launchMode="singleTask"
             android:taskAffinity="com.bw.movie"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="1024c6062925cd76fe5e226ee628f552" />

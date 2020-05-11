@@ -3,6 +3,7 @@ package com.bw.movie.presenter;
 import com.bw.movie.base.BasePresenter;
 import com.bw.movie.base.IBaseView;
 import com.bw.movie.bean.MovieDataBean;
+import com.bw.movie.bean.RegisterBean;
 import com.bw.movie.contract.MovieInContract;
 import com.bw.movie.model.MovieInIMdel;
 
@@ -42,6 +43,48 @@ import com.bw.movie.model.MovieInIMdel;
                 IBaseView view = getView();
                 if (view instanceof MovieInContract.IView){
                    ((MovieInContract.IView) view).onError(str);
+                }
+            }
+        });
+    }
+
+    @Override
+    public void getGuanData(int movieId) {
+     mMdel.getGuanData(movieId, new MovieInContract.MovieInIModel.IModelGuanCallBack() {
+         @Override
+         public void onGuanSuccess(RegisterBean bean) {
+             IBaseView view = getView();
+             if (view instanceof MovieInContract.IView){
+                 ((MovieInContract.IView) view).onGuanSuccess(bean);
+             }
+         }
+
+         @Override
+         public void onGuanError(String str) {
+             IBaseView view = getView();
+             if (view instanceof MovieInContract.IView){
+                 ((MovieInContract.IView) view).onGuanError(str);
+             }
+         }
+     });
+    }
+
+    @Override
+    public void getQuGuanData(int movieid) {
+        mMdel.getQuGuanData(movieid, new MovieInContract.MovieInIModel.IModelQuGuanCallBack() {
+            @Override
+            public void onQuGuanSuccess(RegisterBean bean) {
+                IBaseView view = getView();
+                if (view instanceof MovieInContract.IView){
+                    ((MovieInContract.IView) view).onQuGuanSuccess(bean);
+                }
+            }
+
+            @Override
+            public void onQuGuanError(String str) {
+                IBaseView view = getView();
+                if (view instanceof MovieInContract.IView){
+                   ((MovieInContract.IView) view).onQuGuanError(str);
                 }
             }
         });

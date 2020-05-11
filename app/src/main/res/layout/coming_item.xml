@@ -47,8 +47,9 @@
                 android:id="@+id/syyy"
                 android:layout_marginLeft="@dimen/dp_84"
                 android:text="购票"
+                android:textColor="#ffffff"
                 android:textSize="12dp"
-                android:background="@color/colorAccent2"
+                android:background="@color/colorAccent"
                 android:layout_width="@dimen/dp_45"
                 android:layout_height="@dimen/dp_20" />
         </LinearLayout>

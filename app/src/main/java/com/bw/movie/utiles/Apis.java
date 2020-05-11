@@ -68,4 +68,10 @@ import retrofit2.http.Query;
     //查询电影详情
     @GET("movie/v2/findMoviesDetail")
     Observable<MovieDataBean> domovieInfo(@Query("movieId")int movieId);
+
+    @GET("movie/v1/verify/followMovie")
+    Observable<RegisterBean> doGuan(@Query("movieId")int movieId);
+
+    @GET("movie/v1/verify/cancelFollowMovie")
+    Observable<RegisterBean> doQuGuan(@Query("movieId") int movieId);
 }
