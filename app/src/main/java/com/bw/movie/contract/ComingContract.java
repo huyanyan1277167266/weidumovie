@@ -2,6 +2,7 @@ package com.bw.movie.contract;
 
 import com.bw.movie.base.IBaseView;
 import com.bw.movie.bean.ComingBean;
+import com.bw.movie.bean.ComingSoonBean;
 
 /*
  *@Auther:cln
@@ -10,7 +11,7 @@ import com.bw.movie.bean.ComingBean;
  *@Description:
  * */public interface ComingContract {
      interface ComingView extends IBaseView{
-         void onComingSuccess(ComingBean comingBean);
+         void onComingSuccess(ComingSoonBean comingSoonBean);
          void onComingError(String str);
      }
      interface ComingPresenter{
@@ -19,7 +20,7 @@ import com.bw.movie.bean.ComingBean;
      interface ComingModel{
          void getComing(int page,int count,ComingICallBack iCallBack);
          interface ComingICallBack{
-             void onComingSuccess(ComingBean comingBean);
+             void onComingSuccess(ComingSoonBean comingSoonBean);
              void onComingError(String str);
          }
      }

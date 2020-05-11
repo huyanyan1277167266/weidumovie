@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:id="@+id/ll"
     android:gravity="center">
 <ImageView
     android:layout_marginTop="@dimen/dp_10"
@@ -46,7 +46,7 @@
             <Button
                 android:id="@+id/syyy"
                 android:layout_marginLeft="@dimen/dp_84"
-                android:text="预约"
+                android:text="购票"
                 android:textSize="12dp"
                 android:background="@color/colorAccent2"
                 android:layout_width="@dimen/dp_45"

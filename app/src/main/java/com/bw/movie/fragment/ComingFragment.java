@@ -1,5 +1,6 @@
 package com.bw.movie.fragment;
 
+
 import android.view.View;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,7 +10,7 @@ import com.bw.movie.R;
 import com.bw.movie.adapter.ComingSoonAdapter;
 import com.bw.movie.base.BaseFragment;
 import com.bw.movie.base.BasePresenter;
-import com.bw.movie.bean.ComingBean;
+import com.bw.movie.bean.ComingSoonBean;
 import com.bw.movie.contract.ComingContract;
 import com.bw.movie.presenter.ComingIPresenter;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
@@ -27,7 +28,7 @@ import butterknife.BindView;
  * */public class ComingFragment extends BaseFragment implements ComingContract.ComingView {
      @BindView(R.id.comingrlv)
     XRecyclerView comingrlv;
-    ArrayList<ComingBean.ResultBean> list = new ArrayList<>();
+    ArrayList<ComingSoonBean.ResultBean> list = new ArrayList<ComingSoonBean.ResultBean>();
     int s=1;
     @Override
     protected BasePresenter initPresenter() {
@@ -63,20 +64,26 @@ import butterknife.BindView;
             @Override
             public void onLoadMore() {
                 s++;
-                getget(1,5);
+                getget(s,5);
                 comingrlv.loadMoreComplete();
             }
         });
     }
 
+
+
     @Override
-    public void onComingSuccess(ComingBean comingBean) {
-        List<ComingBean.ResultBean> result = comingBean.getResult();
+    public void onComingSuccess(ComingSoonBean comingSoonBean) {
+        List<ComingSoonBean.ResultBean> result = comingSoonBean.getResult();
+        if (result!=null){
+            list.addAll(result);
+        }
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         comingrlv.setLayoutManager(linearLayoutManager);
         //创建适配器
         ComingSoonAdapter comingSoonAdapter = new ComingSoonAdapter(getContext(), result);
         comingrlv.setAdapter(comingSoonAdapter);
+//        comingrlv.addItemDecoration(new SpaceItemDecoration(10));
     }
 
     @Override
@@ -88,5 +95,26 @@ import butterknife.BindView;
         if (basePresenter!=null&&basePresenter instanceof ComingIPresenter){
             ((ComingIPresenter) basePresenter).getComing(1,5);
         }
+
+    }
+    public class SpaceItemDecoration extends RecyclerView.ItemDecoration {
+        private int space;
+
+        public SpaceItemDecoration(int space) {
+            this.space = space;
+        }
+
+//        @Override
+//        public void getItemOffsets(Rect outRect, View view,
+//                                   RecyclerView parent, RecyclerView.State state) {
+//            outRect.left = space;
+//            outRect.right = space;
+//            outRect.bottom = space;
+//
+//            // Add top margin only for the first item to avoid double space between items
+//            if (parent.getChildPosition(view) == 0) {
+//                outRect.top = space;
+//            }
+//        }
     }
 }

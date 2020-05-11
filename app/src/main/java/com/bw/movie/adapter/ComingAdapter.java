@@ -2,9 +2,11 @@ package com.bw.movie.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bw.movie.R;
+import com.bw.movie.activity.MovieInfoActivity;
 import com.bw.movie.bean.ComingBean;
 
 import java.text.SimpleDateFormat;
@@ -57,7 +60,14 @@ import butterknife.Unbinder;
             ((ViewHolder)holder).sydata.setText(split[1]+"月"+split[2]+"日"+"上映");
         }
        ((ViewHolder) holder).syrs.setText(cominglist.get(position).getWantSeeNum()+"人想看");
-
+        ((ViewHolder) holder).ll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, MovieInfoActivity.class);
+                intent.putExtra("moviewid",cominglist.get(position).getMovieId()+"");
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -73,7 +83,8 @@ import butterknife.Unbinder;
         TextView sydata;
         @BindView(R.id.syrs)
         TextView syrs;
-
+        @BindView(R.id.ll)
+        LinearLayout ll;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             Unbinder bind = ButterKnife.bind(this, itemView);

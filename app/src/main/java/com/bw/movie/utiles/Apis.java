@@ -2,6 +2,7 @@ package com.bw.movie.utiles;
 
 import com.bw.movie.bean.ComingSoonBean;
 import com.bw.movie.bean.HotMovieBean;
+import com.bw.movie.bean.MovieDataBean;
 import com.bw.movie.bean.ReleaseMovieBean;
 import com.bw.movie.bean.BannerBean;
 import com.bw.movie.bean.ComingBean;
@@ -64,5 +65,7 @@ import retrofit2.http.Query;
     //热门电影列表
     @GET("movie/v2/findHotMovieList")
     Observable<HotMovieBean>doHotMovie(@Query("page")int page,@Query("count")int count);
-
+    //查询电影详情
+    @GET("movie/v2/findMoviesDetail")
+    Observable<MovieDataBean> domovieInfo(@Query("movieId")int movieId);
 }

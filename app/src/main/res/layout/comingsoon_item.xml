@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/ll">
 <ImageView
     android:id="@+id/iv"
     android:layout_marginTop="@dimen/dp_20"
@@ -46,7 +47,7 @@
                 android:background="@color/colorAccent"
                 android:layout_marginLeft="@dimen/dp_84"
                 android:textColor="#ffffff"
-                android:text="xxxx"
+                android:text="购票"
                 android:textSize="@dimen/sp_12"
                 android:layout_width="@dimen/dp_45"
                 android:layout_height="@dimen/dp_20" />

@@ -1,5 +1,7 @@
 package com.bw.movie.bean;
 
+import android.content.Context;
+
 import java.util.List;
 
 /*
@@ -19,6 +21,9 @@ public class HotMovieBean {
     private String message;
     private String status;
     private List<ResultBean> result;
+
+
+
 
     public String getMessage() {
         return message;
